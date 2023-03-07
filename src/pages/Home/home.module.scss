@@ -1,0 +1,71 @@
+@use "../../styles/constants" as c;
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+
+  > h1 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+.dropdownWrapper {
+  width: 120px;
+  position: relative;
+
+  margin-top: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+
+  cursor: pointer;
+  user-select: none;
+  .icon {
+    transform: rotate(0);
+    transition: transform 0.3s ease-in-out;
+
+    &.isOpen {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdownInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .itemWrapper {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 120px;
+
+    background-color: #cccccc;
+    border-radius: 4px;
+    visibility: hidden;
+    overflow-y: scroll;
+    transform: scale(0);
+    transform-origin: right top;
+    // transition-duration: 1s;
+    // transition-property: max-height, visibility;
+    // transition-timing-function: ease-in-out;
+
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &.isOpen {
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .item {
+      padding: 8px;
+      &:hover {
+        background-color: #dddddd;
+      }
+    }
+  }
+}
