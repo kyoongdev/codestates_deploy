@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
       - uses: jeanlescure/react-deploy-to-s3-action@main
+
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
