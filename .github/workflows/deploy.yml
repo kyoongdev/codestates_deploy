@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main] # main 브랜치에서 push, pull_request 이벤트가 일어났을 때 실행
+    branches: [main]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@master
 
-      - name: Cache node modules # node modules 캐싱
+      - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: node_modules

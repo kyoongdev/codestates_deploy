@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <section className={styles.wrapper}>
-      <h1>드롭다운배포버전</h1>
+      <h1>드롭다운 배포버전 20230308-17:09</h1>
       <div className={styles.dropdownWrapper}>
         <div className={styles.dropdownInfo} onClick={onClickIcon}>
           <p>Dropdown</p>
